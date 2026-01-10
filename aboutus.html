@@ -11,6 +11,34 @@
 
     <style>
         
+        
+        .home-header {
+    position: fixed;
+    top: 20px;
+    right: 20px;        /* puts it top-right like a real header button */
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 9999;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3A5874;
+    color: white;
+    text-decoration: none;   /* removes underline */
+    border-radius: 8px;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #8866ab;}
+        
         .logo-container {
     display: flex;
     justify-content: center;
@@ -21,7 +49,6 @@
 .logo {
     max-width: 300px;   /* adjust size here */
     height: auto;
-}
 }
 
  
@@ -187,7 +214,13 @@ button {
  
     <div class="webpage">
         <div class="text">
-           
+          
+            <div class="home-header">
+  <a href="index.html" class="home-btn">Home</a>
+</div>
+
+        
+        
               <!-- Navigation Bar -->
             <nav class="navbar">
                 <ul>
@@ -312,9 +345,8 @@ button {
     
         
                         </div>
-         <div class="homefooter">
-    <a href="aboutus.html" class="about-btn">About Us</a>
-</div>
+ 
+    
 
             <script>
                 // Predefined tasks for each planet
