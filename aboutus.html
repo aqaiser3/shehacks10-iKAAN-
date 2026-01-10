@@ -4,26 +4,85 @@
     
     <title> iKAAN | Workspace  </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Merriweather:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+
     <style>
-        /* Remove bullet points from the list */
-        #task-list {
-            list-style-type: none;
-            padding: 0;
-        }
 
-        /* Hide delete buttons by default */
-        li button {
-            display: none;
-        }
+   body {
+    font-family: 'Merriweather', serif;
+}
 
-        /* Show delete button when hovering over the list item */
-        li:hover button {
-            display: inline-block;
-        }
+.oswald {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;   /* controls name size */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+        
+.text-content {
+    font-size: 24px;  /* change to whatever size you like */
+    line-height: 1.5; /* optional: improves readability */
+}
 
-        button {
-            background: purple;
-    font-family: serif;
+
+.exo {
+    font-family: 'Exo 2', sans-serif;
+}
+
+#m-title {
+    font-size: 72px;   /* adjust as needed */
+    margin-bottom: 10px;
+}
+        
+.mission {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+        
+/* Make the team box display side by side */
+.team-box {
+    display: flex;
+    flex-direction: column; /* stack name on top, content-row below */
+    align-items: center;    /* center the name horizontally */
+    margin-bottom: 20px;    /* spacing between boxes */
+}
+
+.team-name {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.content-row {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;  /* top-align text and image */
+    gap: 20px;                /* spacing between text and image */
+}
+
+.text-content {
+    flex: 1;            /* text takes most of the space */
+    text-align: left;
+    max-width: 600px;   /* optional, limits text width so image isn’t too far right */
+}
+
+.image-content {
+    flex: 0 0 auto;          /* image keeps its natural size */
+    margin-left: 20px;       /* moves image closer to text */
+}
+
+.image-content img {
+    width: 200px;       /* adjust size */
+    height: auto;
+    border-radius: 10px;
+}
+
+
+button {
+
     font-size: 16px;
     border-radius: 8px;
     color: aliceblue;
@@ -129,27 +188,35 @@
                 </ul>
             </nav>  
 
-            <h1 id="m-title" >iKAAN</h1>
+        <h1 id="m-title" class="exo">iKAAN</h1>
+
 
            
 
-            <p class="mission">Our mission: To support future neuro-medical teams by organizing critical memory-related procedures and ethical safeguards through a structured clinical task system. </p>
+            <p class="mission">Meet the TEAM! </p>
 
             <!-- Predefined task sections for each planet -->
            
             
+            
+            
             <div id="planet">  
                 
                 
-                <div id="mercury">
-                <h1>Engram Mapping Sessions</h1>
-                <ul id="task-list-mercury"></ul>
-                
-                <div id="align">
-                <input type="text" class= "taskk" id="task-input-mercury" placeholder="Enter a task">
-                <button onclick="addTask('mercury')">Add Task</button>
-                </div>
-            </div>
+                <div id="mercury" class="team-box">
+   <h1 class="oswald team-name">KASHISH</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-mercury"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/plane.gif" alt="Kashish with plane">
+      </div>
+   </div>
+</div>
+
+
+
     
            
         </div>
@@ -158,60 +225,82 @@
                 
                 </div>
 
-        
-        <div id="planet">
-        
-            <div id="venus">
-                <h1>The Mission🚀</h1>
-                <ul id="task-list-venus"></ul>
+        <div id="planet">  
                 
-                 <div id="align">
-                <input type="text" class= "taskk" id="task-input-venus" placeholder="Enter a task">
-                <button  onclick="addTask('venus')">Add Task</button>
-                </div> 
-            </div>
-        </div>
+                
+                <div id="mars" class="team-box">
+   <h1 class="oswald team-name">ANUM</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-mars"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/karaoke.gif" alt="Anum singing karaoke">
+      </div>
+   </div>
+</div>
 
-      
+
+    
+           
+        </div>
+            
             <div id= "space">
                 
                 </div>
-        
-        <div id="planet">
-            <div id="mars">
-                <h1>Post-Mission🌟</h1>
-                <ul id="task-list-mars"></ul>
+
+            <div id="planet">  
                 
-                 <div id="align">
-                <input type="text" class= "taskk" id="task-input-mars" placeholder="Enter a task">
-                <button onclick="addTask('mars')">Add Task</button>
-                </div>
-            </div>
-            
+                
+                <div id="sun" class="team-box">
+   <h1 class="oswald team-name">ALISON</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-sun"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/violin.gif" alt="Alison playing violin">
+      </div>
+   </div>
+</div>
+
+
+
     
+           
         </div>
-        
-                <div id= "space">
+            
+            <div id= "space">
                 
                 </div>
-            
-             <div id="planet">
-            <div id="jupiter">
-                <h1>Post-Mission🌟</h1>
-                <ul id="task-list-mars"></ul>
+
+            <div id="planet">  
                 
-                 <div id="align">
-                <input type="text" class= "taskk" id="task-input-mars" placeholder="Enter a task">
-                <button onclick="addTask('mars')">Add Task</button>
-                </div>
-            </div>
-            
+                
+                <<div id="venus" class="team-box">
+   <h1 class="oswald team-name">NITIKA</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-venus"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/dance.gif" alt="Nitika dancing">
+      </div>
+   </div>
+</div>
+
+
+
     
+           
         </div>
-        
-                <div id= "space">
+            
+            <div id= "space">
                 
                 </div>
+
+                </div>
+            
         
                         </div>
         
@@ -223,30 +312,25 @@
                 // Predefined tasks for each planet
                 const predefinedTasks = {
                     mercury: [
-                        "Finalize mission training, including spacewalk (EVA) and robotics simulations. ",
-                        "Pack personal belongings and ensure compliance with weight and size restrictions. ",
-                        "Review mission briefings, objectives, and spacecraft operational manuals.",
-                        "Conduct final equipment checks and ensure tools are properly secured. ",
-                        "Meet with the medical team for pre-flight health assessments and immunizations.",
+                        "1. I like to swim",
+                        "2. I have been to India 7 times",
+                        "3. I like to try new foods",
                     ],
                     venus: [
-                        "Execute and monitor scheduled experiments, recording all observations meticulously.",
-                        "Perform regular maintenance and inspections of spacecraft systems." ,
-                        "Adhere to the exercise regimen to mitigate muscle and bone loss in microgravity.",
-                        "Communicate daily with mission control to provide updates and receive instructions.",
-                        "Document personal experiences and observations for post-mission reports and outreach.",
-                        
+                        "1. I am an only child",
+                        "2. I have broken the same pinky 3 times" ,
+                        "3. I like to dance",
                     ],
                     mars: [
-                        "Undergo medical evaluations to assess physical and psychological health post-spaceflight.",
-                        "Debrief with mission control and research teams to review mission outcomes.",
-                        "Analyze and organize collected data for scientific publication or reporting.",
-                        "Participate in public outreach events, including interviews and educational presentations.",
-                        "Reflect on mission performance and provide feedback to improve future missions.",
-
-
-],
-                    
+                        "1. I like to paint",
+                        "2. I did karoake at a British pub in Oslo",
+                        "3. I have sprained my foot twice",
+                    ],
+                    sun: [
+                        "1. I was hired to play in a professional orchestra at 12 as a violinist",
+                        "2. I went to Ghana, Africa to help underprivileged villagers open local businesses",
+                        "3. I went to military training camp",
+                    ],
                 };
                 
                 
@@ -270,34 +354,16 @@
                     var ul = document.getElementById(`task-list-${planet}`);
                     var li = document.createElement("li");
 
-                    // Create a checkbox
-                    var checkbox = document.createElement("input");
-                    checkbox.type = "checkbox";
-                    checkbox.style.marginRight = "10px";
-                    checkbox.checked = checked;
-
-                    // Add event listener to handle checkbox change
-                    checkbox.addEventListener('change', function() {
-                        updateTaskState(planet, taskText, checkbox.checked);
-                    });
+                  
 
                     // Create a label for the task
                     var label = document.createElement("label");
                     label.textContent = taskText;
 
-                    // Create a delete button
-                    var deleteButton = document.createElement("button");
-                    deleteButton.textContent = "Delete";
-                    deleteButton.style.marginLeft = "10px";
-                    deleteButton.onclick = function () {
-                        li.remove();
-                        deleteTask(planet, taskText);
-                    };
+                   
 
                     // Append the checkbox, label, and delete button to the list item
-                    li.appendChild(checkbox);
                     li.appendChild(label);
-                    li.appendChild(deleteButton);
 
                     // Add the list item to the task list
                     ul.appendChild(li);
