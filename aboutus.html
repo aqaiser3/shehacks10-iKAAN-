@@ -10,6 +10,15 @@
 
 
     <style>
+        
+        .about-footer {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
 
    body {
     font-family: 'Merriweather', serif;
@@ -282,7 +291,7 @@ button {
             <div id="planet">  
                 
                 
-                <<div id="venus" class="team-box">
+                <div id="venus" class="team-box">
    <h1 class="oswald team-name">NITIKA</h1>
    <div class="content-row">
       <div class="text-content">
@@ -424,6 +433,11 @@ button {
                     localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
                 }
             </script>
+
+
+<div class="about-footer">
+    <button onclick="goToAbout()">About Us</button>
+</div>
     
 </body>
 </html>
