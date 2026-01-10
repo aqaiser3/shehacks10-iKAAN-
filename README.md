@@ -1,2 +1,2 @@
 # shehacks10-iKAAN-
-hackathons tgt yay
+hackathon tgt yay
