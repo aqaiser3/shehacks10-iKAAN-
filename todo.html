@@ -1,0 +1,353 @@
+<!doctype html>
+
+<head>
+    
+    <title> iKAAN | Workspace  </title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Remove bullet points from the list */
+        #task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Hide delete buttons by default */
+        li button {
+            display: none;
+        }
+
+        /* Show delete button when hovering over the list item */
+        li:hover button {
+            display: inline-block;
+        }
+
+        button {
+            background: purple;
+    font-family: serif;
+    font-size: 16px;
+    border-radius: 8px;
+    color: aliceblue;
+    padding: 10px 20px; /* Adjust for proper sizing */
+    border: 1px solid #ccc;
+            display: inline-block;
+    justify-content: center;
+    cursor: pointer; /* Add a pointer cursor for better user experience */
+    align-items: center; /* Centers text inside the button */
+            
+}
+
+        .taskk {
+            padding: 10px;
+            
+            font-size: 16px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid floralwhite;
+            background-color: ghostwhite;
+            margin: auto;
+            margin-left: 320px;
+            margin-bottom: 20px;
+            justify-content: center;  
+           
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            position: relative;
+            transition: background-color 0.3s, border-color 0.3s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: purple;
+            border-color: purple;
+        }
+
+        input[type="checkbox"]:checked::before {
+            content: '✔';
+            position: absolute;
+            left: 4px;
+            top: -2px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+
+        li button {
+            background: #e74c3c;
+            font-family: sans-serif;
+            font-size: 9px;
+            color: white;
+            padding: 2px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        li button:hover {
+            background: #c0392b;
+        }
+
+        li input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+.banner {
+    width: 100%;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <img class="banner" src="banner.png"/> 
+    <div class="webpage">
+        <div class="text">
+           
+              <!-- Navigation Bar -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#mercury" class="nav-btn">Engram Mapping Sessions</a></li>
+                    <li><a href="#venus" class="nav-btn">Memory Editing & Identity Safeguards </a></li>
+                    <li><a href="#mars" class="nav-btn">Cognitive Recovery & Learning Implants
+</a></li>
+                   
+                </ul>
+            </nav>  
+
+            <h1 id="m-title" >iKAAN</h1>
+
+           
+
+            <p class="mission">iKAAN is a futuristic patient task planner that helps individuals navigate engram-based memory reconstruction therapy in advanced healthcare systems. </p>
+
+            <!-- Predefined task sections for each planet -->
+           
+            
+            <div id="planet">  
+                
+                
+                <div id="mercury">
+                <h1>Engram Mapping Sessions</h1>
+                    <p> Purpose: Identify, visualize, and select memories before any intervention</p> 
+                <ul id="task-list-mercury"></ul>
+                
+                <div id="align">
+                <input type="text" class= "taskk" id="task-input-mercury" placeholder="Enter a task">
+                <button onclick="addTask('mercury')">Add Task</button>
+                </div>
+            </div>
+    
+           
+        </div>
+            
+            <div id= "space">
+                
+                </div>
+
+        
+        <div id="planet">
+        
+            <div id="venus">
+                <h1>Memory Editing & Identity Safeguards</h1>
+                 <p> Purpose:Patient-led memory changes with strict ethical protection</p>
+                    
+                <ul id="task-list-venus"></ul>
+                
+                 <div id="align">
+                <input type="text" class= "taskk" id="task-input-venus" placeholder="Enter a task">
+                <button  onclick="addTask('venus')">Add Task</button>
+                </div> 
+            </div>
+        </div>
+
+      
+            <div id= "space">
+                
+                </div>
+        
+        <div id="planet">
+            <div id="mars">
+                <h1>Cognitive Recovery & Learning Implants</h1>
+                <p> Purpose: Healing, strengthening, and safe learning without overload</p>
+                <ul id="task-list-mars"></ul>
+                
+                 <div id="align">
+                <input type="text" class= "taskk" id="task-input-mars" placeholder="Enter a task">
+                <button onclick="addTask('mars')">Add Task</button>
+                </div>
+            </div>
+            
+    
+        </div>
+        
+                <div id= "space">
+                
+                </div>
+            
+        
+                        </div>
+        
+        
+            </div>
+    </div>
+
+            <script>
+                // Predefined tasks for each planet
+                const predefinedTasks = {
+                    mercury: [
+                        "Complete a memory health scan",
+                        "Review your memory map with a specialist (Engram editors)",
+                        "Choose which memories or skills need attention",
+                        "Check that your memories are accurate and safe ",
+                        "Mark the most important parts of who you are.",
+                    ],
+                    
+                    
+                    
+                
+
+                    venus: [
+                        "Backup existing memory archive",
+                        "Complete memory reconstruction session" ,
+                        "Verify edited memory integration",
+                        "Verify authenticity",
+                        "Prevent memory drift",
+                        "Lock core identity nodes",
+                        
+                        
+                    ],
+                    mars: [
+                        "Perform memory stabilization exercises",
+                        "Complete guided neuroplasticity training",
+                        " Log daily cognitive wellbeing check-in",
+                        "Install new language module ",
+                        "Test skill integration",
+                        "Prevent cognitive overload",
+
+],
+                    
+                };
+                
+                
+
+                // Load predefined tasks on page load
+                document.addEventListener("DOMContentLoaded", function() {
+                    for (const planet in predefinedTasks) {
+                        predefinedTasks[planet].forEach(function(task) {
+                            createTaskElement(planet, task, false);
+                        });
+                    }
+
+                    // Load tasks from localStorage
+                    for (const planet in predefinedTasks) {
+                        loadTasks(planet);
+                    }
+                });
+
+                // Function to create a new task list item
+                function createTaskElement(planet, taskText, checked) {
+                    var ul = document.getElementById(`task-list-${planet}`);
+                    var li = document.createElement("li");
+
+                    // Create a checkbox
+                    var checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.style.marginRight = "10px";
+                    checkbox.checked = checked;
+
+                    // Add event listener to handle checkbox change
+                    checkbox.addEventListener('change', function() {
+                        updateTaskState(planet, taskText, checkbox.checked);
+                    });
+
+                    // Create a label for the task
+                    var label = document.createElement("label");
+                    label.textContent = taskText;
+
+                    // Create a delete button
+                    var deleteButton = document.createElement("button");
+                    deleteButton.textContent = "Delete";
+                    deleteButton.style.marginLeft = "10px";
+                    deleteButton.onclick = function () {
+                        li.remove();
+                        deleteTask(planet, taskText);
+                    };
+
+                    // Append the checkbox, label, and delete button to the list item
+                    li.appendChild(checkbox);
+                    li.appendChild(label);
+                    li.appendChild(deleteButton);
+
+                    // Add the list item to the task list
+                    ul.appendChild(li);
+                }
+
+                // Function to add a task manually
+                function addTask(planet) {
+                    var input = document.getElementById(`task-input-${planet}`);
+                    var taskText = input.value.trim();
+
+                    if (taskText === "") {
+                        alert("Please enter a task!");
+                        return;
+                    }
+
+                    createTaskElement(planet, taskText, false);
+                    saveTask(planet, taskText, false);
+                    input.value = "";
+                }
+
+                // Function to save a task to localStorage
+                function saveTask(planet, taskText, checked) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.push({ text: taskText, checked: checked });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+
+                // Function to load tasks from localStorage
+                function loadTasks(planet) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.forEach(function(task) {
+                        createTaskElement(planet, task.text, task.checked);
+                    });
+                }
+
+                // Function to update task state (checkbox checked/unchecked)
+                function updateTaskState(planet, taskText, checked) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.forEach(function(task) {
+                        if (task.text === taskText) {
+                            task.checked = checked;
+                        }
+                    });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+
+                // Function to delete a task from localStorage
+                function deleteTask(planet, taskText) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks = tasks.filter(function(task) {
+                        return task.text !== taskText;
+                    });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+            </script>
+    
+</body>
+</html>
