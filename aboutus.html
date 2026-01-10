@@ -11,19 +11,20 @@
 
     <style>
         
-        .about-footer {
-    position: fixed;
-    bottom: 30px;
-    width: 100%;
+        .logo-container {
     display: flex;
     justify-content: center;
-    z-index: 10;
+    align-items: center;
+    padding: 20px 0;
 }
 
-   body {
-    font-family: 'Merriweather', serif;
+.logo {
+    max-width: 300px;   /* adjust size here */
+    height: auto;
+}
 }
 
+ 
 .oswald {
     font-family: 'Oswald', sans-serif;
     font-size: 50px;   /* controls name size */
@@ -183,7 +184,7 @@ button {
 
 <body>
 
-    <img class="banner" src="banner.png"/> 
+ 
     <div class="webpage">
         <div class="text">
            
@@ -193,7 +194,7 @@ button {
                     <li><a href="#mercury" class="nav-btn">Kashish</a></li>
                     <li><a href="#venus" class="nav-btn">Anum</a></li>
                     <li><a href="#mars" class="nav-btn">Alison</a></li>
-                    <li><a href="#jupiter" class="nav-btn" id="align">Nitika</a></li>
+                    <li><a href="#jupiter" class="nav-btn" >Nitika</a></li>
                    
                    
                 </ul>
@@ -278,9 +279,6 @@ button {
    </div>
 </div>
 
-
-
-    
            
         </div>
             
@@ -303,9 +301,6 @@ button {
    </div>
 </div>
 
-
-
-    
            
         </div>
             
@@ -314,13 +309,12 @@ button {
                 </div>
 
                 </div>
-            
+    
         
                         </div>
-        
-        
-            </div>
-    </div>
+         <div class="homefooter">
+    <a href="aboutus.html" class="about-btn">About Us</a>
+</div>
 
             <script>
                 // Predefined tasks for each planet
@@ -383,61 +377,9 @@ button {
                     ul.appendChild(li);
                 }
 
-                // Function to add a task manually
-                function addTask(planet) {
-                    var input = document.getElementById(`task-input-${planet}`);
-                    var taskText = input.value.trim();
+             
 
-                    if (taskText === "") {
-                        alert("Please enter a task!");
-                        return;
-                    }
-
-                    createTaskElement(planet, taskText, false);
-                    saveTask(planet, taskText, false);
-                    input.value = "";
-                }
-
-                // Function to save a task to localStorage
-                function saveTask(planet, taskText, checked) {
-                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
-                    tasks.push({ text: taskText, checked: checked });
-                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
-                }
-
-                // Function to load tasks from localStorage
-                function loadTasks(planet) {
-                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
-                    tasks.forEach(function(task) {
-                        createTaskElement(planet, task.text, task.checked);
-                    });
-                }
-
-                // Function to update task state (checkbox checked/unchecked)
-                function updateTaskState(planet, taskText, checked) {
-                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
-                    tasks.forEach(function(task) {
-                        if (task.text === taskText) {
-                            task.checked = checked;
-                        }
-                    });
-                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
-                }
-
-                // Function to delete a task from localStorage
-                function deleteTask(planet, taskText) {
-                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
-                    tasks = tasks.filter(function(task) {
-                        return task.text !== taskText;
-                    });
-                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
-                }
+            
             </script>
-
-
-<div class="about-footer">
-    <button onclick="goToAbout()">About Us</button>
-</div>
-    
 </body>
 </html>
