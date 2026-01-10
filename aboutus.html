@@ -1,0 +1,424 @@
+<!doctype html>
+
+<head>
+    
+    <title> iKAAN | Workspace  </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Merriweather:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <style>
+
+   body {
+    font-family: 'Merriweather', serif;
+}
+
+.oswald {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;   /* controls name size */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+        
+.text-content {
+    font-size: 24px;  /* change to whatever size you like */
+    line-height: 1.5; /* optional: improves readability */
+}
+
+
+.exo {
+    font-family: 'Exo 2', sans-serif;
+}
+
+#m-title {
+    font-size: 72px;   /* adjust as needed */
+    margin-bottom: 10px;
+}
+        
+.mission {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+        
+/* Make the team box display side by side */
+.team-box {
+    display: flex;
+    flex-direction: column; /* stack name on top, content-row below */
+    align-items: center;    /* center the name horizontally */
+    margin-bottom: 20px;    /* spacing between boxes */
+}
+
+.team-name {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.content-row {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;  /* top-align text and image */
+    gap: 20px;                /* spacing between text and image */
+}
+
+.text-content {
+    flex: 1;            /* text takes most of the space */
+    text-align: left;
+    max-width: 600px;   /* optional, limits text width so image isn’t too far right */
+}
+
+.image-content {
+    flex: 0 0 auto;          /* image keeps its natural size */
+    margin-left: 20px;       /* moves image closer to text */
+}
+
+.image-content img {
+    width: 200px;       /* adjust size */
+    height: auto;
+    border-radius: 10px;
+}
+
+
+button {
+
+    font-size: 16px;
+    border-radius: 8px;
+    color: aliceblue;
+    padding: 10px 20px; /* Adjust for proper sizing */
+    border: 1px solid #ccc;
+            display: inline-block;
+    justify-content: center;
+    cursor: pointer; /* Add a pointer cursor for better user experience */
+    align-items: center; /* Centers text inside the button */
+            
+}
+
+        .taskk {
+            padding: 10px;
+            
+            font-size: 16px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid floralwhite;
+            background-color: ghostwhite;
+            margin: auto;
+            margin-left: 320px;
+            margin-bottom: 20px;
+            justify-content: center;  
+           
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            position: relative;
+            transition: background-color 0.3s, border-color 0.3s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: purple;
+            border-color: purple;
+        }
+
+        input[type="checkbox"]:checked::before {
+            content: '✔';
+            position: absolute;
+            left: 4px;
+            top: -2px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+
+        li button {
+            background: #e74c3c;
+            font-family: sans-serif;
+            font-size: 9px;
+            color: white;
+            padding: 2px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        li button:hover {
+            background: #c0392b;
+        }
+
+        li input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+.banner {
+    width: 100%;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <img class="banner" src="banner.png"/> 
+    <div class="webpage">
+        <div class="text">
+           
+              <!-- Navigation Bar -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#mercury" class="nav-btn">Pre-Launch🌎</a></li>
+                    <li><a href="#venus" class="nav-btn">The Mission🚀</a></li>
+                    <li><a href="#mars" class="nav-btn">Post-Mission🌟</a></li>
+                   
+                </ul>
+            </nav>  
+
+        <h1 id="m-title" class="exo">iKAAN</h1>
+
+
+           
+
+            <p class="mission">Meet the TEAM! </p>
+
+            <!-- Predefined task sections for each planet -->
+           
+            
+            
+            
+            <div id="planet">  
+                
+                
+                <div id="mercury" class="team-box">
+   <h1 class="oswald team-name">KASHISH</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-mercury"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/plane.gif" alt="Kashish with plane">
+      </div>
+   </div>
+</div>
+
+
+
+    
+           
+        </div>
+            
+            <div id= "space">
+                
+                </div>
+
+        <div id="planet">  
+                
+                
+                <div id="mars" class="team-box">
+   <h1 class="oswald team-name">ANUM</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-mars"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/karaoke.gif" alt="Anum singing karaoke">
+      </div>
+   </div>
+</div>
+
+
+    
+           
+        </div>
+            
+            <div id= "space">
+                
+                </div>
+
+            <div id="planet">  
+                
+                
+                <div id="sun" class="team-box">
+   <h1 class="oswald team-name">ALISON</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-sun"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/violin.gif" alt="Alison playing violin">
+      </div>
+   </div>
+</div>
+
+
+
+    
+           
+        </div>
+            
+            <div id= "space">
+                
+                </div>
+
+            <div id="planet">  
+                
+                
+                <<div id="venus" class="team-box">
+   <h1 class="oswald team-name">NITIKA</h1>
+   <div class="content-row">
+      <div class="text-content">
+         <ul id="task-list-venus"></ul>
+      </div>
+      <div class="image-content">
+         <img src="images/dance.gif" alt="Nitika dancing">
+      </div>
+   </div>
+</div>
+
+
+
+    
+           
+        </div>
+            
+            <div id= "space">
+                
+                </div>
+
+                </div>
+            
+        
+                        </div>
+        
+        
+            </div>
+    </div>
+
+            <script>
+                // Predefined tasks for each planet
+                const predefinedTasks = {
+                    mercury: [
+                        "1. I like to swim",
+                        "2. I have been to India 7 times",
+                        "3. I like to try new foods",
+                    ],
+                    venus: [
+                        "1. I am an only child",
+                        "2. I have broken the same pinky 3 times" ,
+                        "3. I like to dance",
+                    ],
+                    mars: [
+                        "1. I like to paint",
+                        "2. I did karoake at a British pub in Oslo",
+                        "3. I have sprained my foot twice",
+                    ],
+                    sun: [
+                        "1. I was hired to play in a professional orchestra at 12 as a violinist",
+                        "2. I went to Ghana, Africa to help underprivileged villagers open local businesses",
+                        "3. I went to military training camp",
+                    ],
+                };
+                
+                
+
+                // Load predefined tasks on page load
+                document.addEventListener("DOMContentLoaded", function() {
+                    for (const planet in predefinedTasks) {
+                        predefinedTasks[planet].forEach(function(task) {
+                            createTaskElement(planet, task, false);
+                        });
+                    }
+
+                    // Load tasks from localStorage
+                    for (const planet in predefinedTasks) {
+                        loadTasks(planet);
+                    }
+                });
+
+                // Function to create a new task list item
+                function createTaskElement(planet, taskText, checked) {
+                    var ul = document.getElementById(`task-list-${planet}`);
+                    var li = document.createElement("li");
+
+                  
+
+                    // Create a label for the task
+                    var label = document.createElement("label");
+                    label.textContent = taskText;
+
+                   
+
+                    // Append the checkbox, label, and delete button to the list item
+                    li.appendChild(label);
+
+                    // Add the list item to the task list
+                    ul.appendChild(li);
+                }
+
+                // Function to add a task manually
+                function addTask(planet) {
+                    var input = document.getElementById(`task-input-${planet}`);
+                    var taskText = input.value.trim();
+
+                    if (taskText === "") {
+                        alert("Please enter a task!");
+                        return;
+                    }
+
+                    createTaskElement(planet, taskText, false);
+                    saveTask(planet, taskText, false);
+                    input.value = "";
+                }
+
+                // Function to save a task to localStorage
+                function saveTask(planet, taskText, checked) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.push({ text: taskText, checked: checked });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+
+                // Function to load tasks from localStorage
+                function loadTasks(planet) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.forEach(function(task) {
+                        createTaskElement(planet, task.text, task.checked);
+                    });
+                }
+
+                // Function to update task state (checkbox checked/unchecked)
+                function updateTaskState(planet, taskText, checked) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks.forEach(function(task) {
+                        if (task.text === taskText) {
+                            task.checked = checked;
+                        }
+                    });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+
+                // Function to delete a task from localStorage
+                function deleteTask(planet, taskText) {
+                    var tasks = JSON.parse(localStorage.getItem(`tasks-${planet}`)) || [];
+                    tasks = tasks.filter(function(task) {
+                        return task.text !== taskText;
+                    });
+                    localStorage.setItem(`tasks-${planet}`, JSON.stringify(tasks));
+                }
+            </script>
+    
+</body>
+</html>
