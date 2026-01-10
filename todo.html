@@ -87,8 +87,8 @@ button:hover {
         }
 
         input[type="checkbox"]:checked {
-            background-color: purple;
-            border-color: purple;
+            background-color: #57deec;
+            border-color: #57deec;
         }
 
         input[type="checkbox"]:checked::before {
@@ -167,6 +167,135 @@ button:hover {
     background-color: #71bacb;}
         
 
+        
+        
+        
+        
+        .bodycal {
+    background: #0f172a;
+    margin: 0;
+    padding: 40px 0;
+    font-family: sans-serif;
+}
+
+/* CALENDAR CONTAINER */
+.calendar-container {
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* HEADER */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 50px;
+}
+
+.calendar-header button {
+    background: #71bacb;
+   
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+     align-content: center;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.calendar-header button:hover {
+    background: #57deec;
+}
+
+
+/* GRID */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+        height: 500px;
+}
+
+.calendar-day {
+    text-align: center;
+    align-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #f1f1f1;
+    user-select: none;
+}
+
+.calendar-day:hover {
+    background: #ddd;
+}
+
+.calendar-day.active {
+    background:#71bacb;
+    color: white;
+    font-weight: bold;
+}
+
+/* TASK PANEL */
+.task-panel {
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+    
+    
+    font-size: 20px;
+}
+
+.task-panel h3 {
+    margin: 0 0 10px;
+}
+
+.task-panel input {
+    width: 70%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.task-panel button {
+    padding: 8px 12px;
+    background: #71bacb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.task-panel button:hover {
+    background: #57deec;
+}
+
+.task-panel ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.task-panel li {
+    margin: 6px 0;
+    background: #f5f5f5;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+        
     </style>
 </head>
 
@@ -290,7 +419,23 @@ button:hover {
             
         
                         </div>
-        
+        <div class="calendar-container">
+    <div class="calendar-header">
+        <button onclick="changeMonth(-1)">‹</button>
+        <h2 id="monthYear"></h2>
+        <button onclick="changeMonth(1)">›</button>
+    </div>
+
+    <div class="calendar-grid" id="calendarDays"></div>
+
+    <div class="task-panel">
+        <h3 id="selectedDate">Select a date</h3>
+        <input type="text" id="calendarTaskInput" placeholder="Add a task or note">
+        <button onclick="addCalendarTask()">Add</button>
+        <ul id="calendarTaskList"></ul>
+    </div>
+</div>
+
         
             </div>
     </div>
@@ -452,6 +597,98 @@ button:hover {
         section.scrollIntoView({ behavior: "smooth" });
     }
 }
+                
+                const year = 2200;
+let currentMonth = 0;
+let selectedDateKey = null;
+
+const monthNames = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
+];
+
+function renderCalendar() {
+    const monthYear = document.getElementById("monthYear");
+    const calendarDays = document.getElementById("calendarDays");
+
+    monthYear.textContent = `${monthNames[currentMonth]} ${year}`;
+    calendarDays.innerHTML = "";
+
+    const firstDay = new Date(year, currentMonth, 1).getDay();
+    const daysInMonth = new Date(year, currentMonth + 1, 0).getDate();
+
+    for (let i = 0; i < firstDay; i++) {
+        calendarDays.appendChild(document.createElement("div"));
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const div = document.createElement("div");
+        div.className = "calendar-day";
+        div.textContent = day;
+
+        div.onclick = function () {
+            selectDate(day, div);
+        };
+
+        calendarDays.appendChild(div);
+    }
+}
+
+function changeMonth(direction) {
+    currentMonth += direction;
+
+    if (currentMonth < 0) currentMonth = 11;
+    if (currentMonth > 11) currentMonth = 0;
+
+    selectedDateKey = null;
+    document.getElementById("selectedDate").textContent = "Select a date";
+    document.getElementById("calendarTaskList").innerHTML = "";
+
+    renderCalendar();
+}
+
+function selectDate(day, element) {
+    document.querySelectorAll(".calendar-day")
+        .forEach(d => d.classList.remove("active"));
+
+    element.classList.add("active");
+
+    selectedDateKey = `${year}-${currentMonth + 1}-${day}`;
+    document.getElementById("selectedDate").textContent =
+        `Tasks for ${monthNames[currentMonth]} ${day}`;
+
+    loadTasks();
+}
+
+function addCalendarTask() {
+    if (!selectedDateKey) return;
+
+    const input = document.getElementById("calendarTaskInput");
+    const text = input.value.trim();
+    if (!text) return;
+
+    const tasks = JSON.parse(localStorage.getItem(selectedDateKey)) || [];
+    tasks.push(text);
+    localStorage.setItem(selectedDateKey, JSON.stringify(tasks));
+
+    input.value = "";
+    loadTasks();
+}
+
+function loadTasks() {
+    const list = document.getElementById("calendarTaskList");
+    list.innerHTML = "";
+
+    const tasks = JSON.parse(localStorage.getItem(selectedDateKey)) || [];
+    tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = task;
+        list.appendChild(li);
+    });
+}
+
+renderCalendar();
+
             </script>
     
 </body>

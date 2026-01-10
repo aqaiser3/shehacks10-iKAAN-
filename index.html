@@ -86,6 +86,23 @@
         button:hover {
             background-color: #71bacb;
         }
+        
+        
+          /* Ticket starts hidden */
+.ticket {
+    opacity: 0;
+    transform: translateY(30px); /* subtle slide up */
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* When visible */
+.ticket.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+        
+        
+        
     .video-bg {
         position: fixed;
         top: 0;
@@ -237,6 +254,20 @@
 </div>
 
     <script>
+        
+          function redirect() {
+        window.location.href = "todo.html";
+    }
+
+    // Show the ticket after 10 seconds
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            document.querySelector(".ticket").classList.add("show");
+        }, 10000); // 10 seconds
+    });
+        
+        
+        
         //heyyy
    function openLogin() {
   document.getElementById("loginModal").style.display = "flex";
