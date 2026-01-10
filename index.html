@@ -148,6 +148,43 @@
     font-family: 'Merriweather', serif;
 }
 
+        
+        
+        
+        /* pop up form*/
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+}
+
+
+        
+        
     </style>
 </head>
 <body>
@@ -161,9 +198,11 @@
                 <div class="message">
                     Your Personal Memory Care Planner
                     <!--Continue button-->
-                    <div class="button-container">
-                        <button onclick="redirect()">Welcome</button>
-                    </div>
+                    
+                    
+   <div class="button-container">
+    <button onclick="openLogin()">Login</button>
+</div>
                 </div>
             </div>
         </div>
@@ -181,12 +220,35 @@
     <a href="aboutus.html" class="about-btn">About Us</a>
 </div>
     
+    
+    
+   <div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLogin()">&times;</span>
+
+    <h2>Secure Login</h2>
+
+    <input type="text" placeholder="Full Name">
+    <input type="password" placeholder="Password">
+    <input type="text" placeholder="Health Care Code">
+
+    <button onclick="goToWorkspace()">Enter Workspace</button>
+  </div>
+</div>
 
     <script>
         //heyyy
-        function redirect() {
-            window.location.href = "todo.html"; 
-        }
+   function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
+
+function goToWorkspace() {
+  window.location.href = "todo.html";
+}
     </script>
 
 </body>
