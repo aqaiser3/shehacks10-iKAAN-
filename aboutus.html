@@ -29,7 +29,7 @@
     color: white;
     text-decoration: none;   /* removes underline */
     border-radius: 8px;
-    font-family: 'Merriweather', serif;
+    
     font-size: 16px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -59,6 +59,8 @@
 }
         
 .text-content {
+    font-family: "Albert Sans Bold";
+            src: url('AlbertSans-Bold.ttf') format('truetype');
     font-size: 24px;  /* change to whatever size you like */
     line-height: 1.5; /* optional: improves readability */
 }
@@ -74,7 +76,7 @@
 }
         
 .mission {
-    font-size: 35px;
+    font-size: 50px;
     margin-bottom: 40px;
 }
         
@@ -96,7 +98,7 @@
     display: flex;
     width: 100%;
     align-items: flex-start;  /* top-align text and image */
-    gap: 20px;                /* spacing between text and image */
+    gap: 150px;                /* spacing between text and image */
 }
 
 .text-content {
@@ -105,10 +107,7 @@
     max-width: 600px;   /* optional, limits text width so image isn’t too far right */
 }
 
-.image-content {
-    flex: 0 0 auto;          /* image keeps its natural size */
-    margin-left: 20px;       /* moves image closer to text */
-}
+
 
 .image-content img {
     width: 200px;       /* adjust size */
@@ -131,20 +130,7 @@ button {
             
 }
 
-        .taskk {
-            padding: 10px;
-            
-            font-size: 16px;
-            width: 250px;
-            border-radius: 5px;
-            border: 1px solid floralwhite;
-            background-color: ghostwhite;
-            margin: auto;
-            margin-left: 320px;
-            margin-bottom: 20px;
-            justify-content: center;  
-           
-        }
+      
 
         li {
             display: flex;
@@ -152,55 +138,7 @@ button {
             margin: 10px 0;
         }
 
-        input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ddd;
-            border-radius: 50%;
-            margin-right: 10px;
-            cursor: pointer;
-            background-color: #fff;
-            position: relative;
-            transition: background-color 0.3s, border-color 0.3s;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-        }
-
-        input[type="checkbox"]:checked {
-            background-color: #71bacb;
-            border-color: #71bacb;
-        }
-
-        input[type="checkbox"]:checked::before {
-            content: '✔';
-            position: absolute;
-            left: 4px;
-            top: -2px;
-            font-size: 16px;
-            color: white;
-            font-weight: bold;
-        }
-
-        li button {
-            background: #e74c3c;
-            font-family: sans-serif;
-            font-size: 9px;
-            color: white;
-            padding: 2px;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        li button:hover {
-            background: #c0392b;
-        }
-
-        li input[type="checkbox"]:checked + label {
-            text-decoration: line-through;
-            color: #aaa;
-        }
+      
 .banner {
     width: 100%;
 }
@@ -254,10 +192,14 @@ button {
    <h1 class="oswald team-name">KASHISH</h1>
    <div class="content-row">
       <div class="text-content">
-         <ul id="task-list-mercury"></ul>
+         <ol id="task-list-mercury">
+           <li> 1. I like to swim </li>
+                       <li> 2. I have been to India 7 times</li>
+                       <li>3. I like to try new foods</li>
+                    </ol>
       </div>
       <div class="image-content">
-         <img src="images/plane.gif" alt="Kashish with plane">
+         <img src="images/travel.png" alt="Kashish with plane">
       </div>
    </div>
 </div>
@@ -275,14 +217,18 @@ button {
         <div id="planet">  
                 
                 
-                <div id="mars" class="team-box">
+                <div id="venus" class="team-box">
    <h1 class="oswald team-name">ANUM</h1>
    <div class="content-row">
       <div class="text-content">
-         <ul id="task-list-mars"></ul>
+        <ol>
+  <li>1. I like to paint</li>
+  <li>2. I did karaoke at a British pub in Oslo</li>
+  <li>3. I’ve sprained my foot twice</li>
+</ol>
       </div>
       <div class="image-content">
-         <img src="images/karaoke.gif" alt="Anum singing karaoke">
+         <img src="images/mic.png" alt="Anum singing karaoke">
       </div>
    </div>
 </div>
@@ -299,14 +245,19 @@ button {
             <div id="planet">  
                 
                 
-                <div id="sun" class="team-box">
+                <div id="mars" class="team-box">
    <h1 class="oswald team-name">ALISON</h1>
    <div class="content-row">
       <div class="text-content">
-         <ul id="task-list-sun"></ul>
+  
+         <ol>
+  <li>1. I played violin in an orchestra at 12</li>
+  <li>2. Helped villagers start businesses in Ghana</li>
+  <li>3. Attended military training camp</li>
+</ol>
       </div>
       <div class="image-content">
-         <img src="images/violin.gif" alt="Alison playing violin">
+         <img src="images/violin.png" alt="Alison playing violin">
       </div>
    </div>
 </div>
@@ -319,16 +270,18 @@ button {
                 </div>
 
             <div id="planet">  
-                
-                
-                <div id="venus" class="team-box">
+                <div id="jupiter" class="team-box">
    <h1 class="oswald team-name">NITIKA</h1>
    <div class="content-row">
       <div class="text-content">
-         <ul id="task-list-venus"></ul>
+         <ol>
+  <li>1. I am an only child</li>
+  <li>2. I broke the same pinky three times</li>
+  <li>3. I love to dance</li>
+</ol>
       </div>
       <div class="image-content">
-         <img src="images/dance.gif" alt="Nitika dancing">
+         <img src="images/dance.png" alt="Nitika dancing">
       </div>
    </div>
 </div>
@@ -336,9 +289,15 @@ button {
            
         </div>
             
-            <div id= "space">
+        <div id= "space"> </div>
+             
+            <div id= "space"> </div>
+            <div id= "space"> </div>
+            <div id= "space"> </div>
+            <div id= "space"> </div>
+            <div id= "space"> </div>
                 
-                </div>
+               
 
                 </div>
     
@@ -347,70 +306,5 @@ button {
  
     
 
-            <script>
-                // Predefined tasks for each planet
-                const predefinedTasks = {
-                    mercury: [
-                        "1. I like to swim",
-                        "2. I have been to India 7 times",
-                        "3. I like to try new foods",
-                    ],
-                    venus: [
-                        "1. I am an only child",
-                        "2. I have broken the same pinky 3 times" ,
-                        "3. I like to dance",
-                    ],
-                    mars: [
-                        "1. I like to paint",
-                        "2. I did karoake at a British pub in Oslo",
-                        "3. I have sprained my foot twice",
-                    ],
-                    sun: [
-                        "1. I was hired to play in a professional orchestra at 12 as a violinist",
-                        "2. I went to Ghana, Africa to help underprivileged villagers open local businesses",
-                        "3. I went to military training camp",
-                    ],
-                };
-                
-                
-
-                // Load predefined tasks on page load
-                document.addEventListener("DOMContentLoaded", function() {
-                    for (const planet in predefinedTasks) {
-                        predefinedTasks[planet].forEach(function(task) {
-                            createTaskElement(planet, task, false);
-                        });
-                    }
-
-                    // Load tasks from localStorage
-                    for (const planet in predefinedTasks) {
-                        loadTasks(planet);
-                    }
-                });
-
-                // Function to create a new task list item
-                function createTaskElement(planet, taskText, checked) {
-                    var ul = document.getElementById(`task-list-${planet}`);
-                    var li = document.createElement("li");
-
-                  
-
-                    // Create a label for the task
-                    var label = document.createElement("label");
-                    label.textContent = taskText;
-
-                   
-
-                    // Append the checkbox, label, and delete button to the list item
-                    li.appendChild(label);
-
-                    // Add the list item to the task list
-                    ul.appendChild(li);
-                }
-
-             
-
-            
-            </script>
 </body>
 </html>

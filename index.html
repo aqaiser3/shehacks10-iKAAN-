@@ -24,8 +24,9 @@
         }
 
         .ticket {
-            background-color: #fff;
-            width: 400px;
+            background-color: #162f5c;
+            width:500px;
+     
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 8px 8px 5px #94A6BB;
@@ -35,14 +36,15 @@
             background-color: #3A5874;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 5px 0;
             font-size: 24px;
             font-weight: bold;
         }
 
         .ticket-body {
-            padding: 30px;
+margin-bottom: 5px;
             align-items: center;
+        
         }
 
         .row {
@@ -57,17 +59,18 @@
 
         .message {
             text-align: center;
-            margin-top: 20px;
             font-size: 20px;
+            font-family: 'Merriweather', serif;
             font-style: italic;
-            color: #3A5874;
+            color: #fff;
         }
 
         .button-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         button {
@@ -97,11 +100,11 @@
 
 /* When visible */
 .ticket.show {
+    
     opacity: 1;
     transform: translateY(0);
 }
-        
-        
+           
         
     .video-bg {
         position: fixed;
@@ -151,7 +154,7 @@
     color: white;
     text-decoration: none;   /* removes underline */
     border-radius: 8px;
-    font-family: 'Merriweather', serif;
+ 
     font-size: 16px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -161,9 +164,6 @@
 .about-btn:hover {
     background-color: #71bacb;}
 
-   body {
-    font-family: 'Merriweather', serif;
-}
 
         
         
@@ -199,7 +199,19 @@
   padding: 10px;
 }
 
+             .logo-container {
+margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
 
+.logo {
+    max-width: 275px;   /* adjust size here */
+    height: auto;
+}
+    
         
         
     </style>
@@ -207,9 +219,11 @@
 <body>
     <!--Ticket Page-->
     <div class="ticket">
-        <div class="ticket-header">
-            iKAAN
-        </div>
+        <div class="logo-container">
+           <img src="iKAAN-logo.png" alt="iKAAN logo" class="logo">
+        </div>    
+        
+        
         <div class="ticket-body">
             <div class="ticket-content">
                 <div class="message">
@@ -228,7 +242,7 @@
     
     
     <div class="video-bg">
-        <video autoplay muted loop playsinline>
+      <video autoplay muted loop playsinline>
             <source src="background.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
@@ -263,7 +277,7 @@
     window.addEventListener("load", () => {
         setTimeout(() => {
             document.querySelector(".ticket").classList.add("show");
-        }, 10000); // 10 seconds
+       }, 5000); // 10 seconds
     });
         
         
